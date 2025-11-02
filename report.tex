@@ -17,10 +17,10 @@ Pacheco }
 \section{Introduction}
 
 The goal of the project was to create a 3D printed plumbus -- a fictional
-household item from the Rick and Morty universe -- by 3D scanning at least 5
+item from the Rick and Morty universe -- by 3D scanning at least 5
 common, physical objects. The scanned files needed to be fabricated using a
-Fused Deposition Modeling (FDM) printer along with a base for the object by the
-method of laser-cutting.
+Fused Deposition Modeling (FDM) printer while the a base needed to be made using
+by laser-cutting.
 
 A plumbus has 5 distinct parts for which 5 real world items have been selected:
 
@@ -29,9 +29,10 @@ A plumbus has 5 distinct parts for which 5 real world items have been selected:
   \begin{subfigure}[t]{0.46\linewidth}
     \centering
     \includegraphics[width=0.7\linewidth]{media/plumbus_drawing.png}
-    \caption{Labeled image of a plumbus with rough dimensions.}
-  \end{subfigure}
-  ~
+    \caption{Labeled image of a plumbus with rough dimensions. The vertical size
+      of the final product must be no larger than half the stated size (in
+    \unit{\milli\meter}).}
+  \end{subfigure}%
   \begin{subfigure}[t]{0.46\linewidth}
     \centering
     \includegraphics[width=0.7\textwidth]{media/final.jpg}
@@ -60,12 +61,12 @@ selected objects.
 
 First, the objects had to be prepared to fit the exact needs of the project. For
 some, such as the paper tube, it meant creating additional, more detail-rich
-texture while for others it meant modifying their shape and adding a mounting
+textures while for others it meant modifying their shape and adding a mounting
 option to allow scanning on all sides. Most of these modifications were made
-with the use of rubber bands.
+with rubber bands.
 
-The first method of 3D scanning was to attempt photogrammetry with mobile
-devices. The main issue encountered was the impossibly long upload a processing
+The first method of 3D scanning was to attempt photogrammetry with mobile. The
+main issue encountered was the impossibly long upload and processing
 times of the apps\footnote{Apps attempted were Polycam, Modelar and CamToPlan.}
 that we tried. Blaming the server-based processing, the use of \emph{Meshroom}
 was attempted for stitching individual images into a 3D scene, but it also
@@ -76,12 +77,29 @@ scanner used was the \emph{EINSTAR VEGA hand scanner}, provided by our
 professor. With its display and on-device processing, it proved to be fairly
 user-friendly, but several issues also presented themselves.
 
-\begin{figure}[h] \centering
-  \includegraphics[width=0.3\textwidth]{media/scanning.png} \caption{The UI of
-    the EINSTAR VEGA gave valuable information such as the optimal
-    distance to the
-  scanned object as well as areas that still need more definition.}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{media/scanning.png}
+  \caption{The UI of the EINSTAR VEGA gave valuable information such as the
+    optimal distance to the scanned object as well as areas that still need more
+  definition.}
 \end{figure}
+
+% \begin{figure}[h]
+%   \centering
+%   \begin{subfigure}[t]{0.45\linewidth}
+%     \centering
+%     \includegraphics[width=0.5\textwidth]{media/roll_with_dots.png}
+%     \caption{Paper roll with dots drawn on it for features on texture.}
+%     \label{fig:roll_dots}
+%   \end{subfigure}%
+%   \begin{subfigure}[t]{0.45\linewidth}
+%     \centering
+%     \includegraphics[width=0.3\textwidth]{media/ball_hanging.png}
+%     \caption{Ball set up for scanning.}
+%     \label{fig:ball_hanging}
+%   \end{subfigure}
+% \end{figure}
 
 \renewcommand{\arraystretch}{2}
 \begin{table}[h]
@@ -152,11 +170,11 @@ The cleanup and assembly process consisted of the following steps:
       object contains artifacts such as the support (under the roll)
       and scanning
     inaccuracies (top of the roll).}
-  \end{subfigure} ~
+  \end{subfigure} %
   \begin{subfigure}[t]{0.4\linewidth} \centering
     \includegraphics[width=0.9\textwidth]{media/blender_import.png}
     \caption{Imported object (dinglebop), in Blender.}
-  \end{subfigure} ~
+  \end{subfigure} %
   \begin{subfigure}[t]{0.2\linewidth} \centering
     \includegraphics[width=0.9\textwidth]{media/blender_assembled.png}
     \caption{Assembled parts, in Blender.}
@@ -177,27 +195,28 @@ the software.
   \centering
   \begin{subfigure}[t]{0.3\linewidth}
     \includegraphics[width=0.9\textwidth]{media/printing.png}
-  \end{subfigure}
-  ~
+  \end{subfigure}%
   \begin{subfigure}[t]{0.3\linewidth}
     \includegraphics[width=0.9\textwidth]{media/removing_supports.png}
-  \end{subfigure}
-  ~
+  \end{subfigure}%
   \begin{subfigure}[t]{0.3\linewidth}
     \includegraphics[width=0.9\textwidth]{media/dimensions_drawing.jpg}
   \end{subfigure}
-  \caption{Printing, support removal and sketch of final dimensions.}
+  \caption{Printing, support removal and sketch of final dimensions. The
+  dimensions are within the range stated in the task description.}
 \end{figure}
 
-Due to the complex shape of the plumbus, the amount and placement of supports
-was the guiding principle when placing the object on the build plate. Supports
+Due to the complex shape of the plumbus, the amount and placement of
+the supports
+was the guiding principle when placing the object on the printer's
+build plate. Supports
 are required when a section of the object cannot be supported by the object
 itself. The most critical feature in the decision making was the chumbles, as
-removing supports between the different pillars would have been difficult.
+removing supports between the individual bristles would have been difficult.
 According to the previously mentioned considerations, through trial and error,
-the most favorable orientation was found in which the least amount of support
+an orientation was found in which the least amount of support
 material (waste) was used and the chumbles could be printed without the need
-of support between each pillar.
+of support between each bristle.
 
 \section{Laser cutting}
 
@@ -211,8 +230,7 @@ required between the base and the plumbus.
 
     \centering
     \includegraphics[width=0.5\textwidth]{media/collar_drawing.png}
-  \end{subfigure}
-  ~
+  \end{subfigure}%
   \begin{subfigure}[t]{0.45\linewidth}
     \centering
     \includegraphics[width=0.5\textwidth]{media/pillar_drawing.png}
@@ -226,9 +244,9 @@ The final design, featuring a collar mating with the grodus, and four supporting
 legs, was settled on following an iterative design process. The main issue that
 needed to be tackled was identifying the correct tolerances in the design that
 translated well into the reall world material. The \qty{3}{\milli\meter} acrylic
-plate used was very prone to melting, thus an agressive compensation was
-required where the material would mate with the plumbus or other acrylic
-elements.
+plate used, chosen for its transparency and slight plastic deformation, was very
+prone to melting, thus an agressive compensation was required where the material
+would mate with the plumbus or other acrylic elements.
 
 \begin{figure}[h]
   \centering
@@ -257,7 +275,7 @@ ground through friction alone.
 % Going to the work we learn how to utilise different equipments to make a final
 % product, that goes from using planning a 3d scanner
 
-During reverse-engineering and production of the plumbus, according to the
+During the reverse-engineering and production of the plumbus, according to the
 criteria, the project experienced many setbacks but also moments of momentum.
 
 % Following the creative process of brainstorming the materials and form of
@@ -265,16 +283,34 @@ criteria, the project experienced many setbacks but also moments of momentum.
 % and software caused some minor difficulties, a theme that would follow all new
 % technologies exlored during the project's lifetime.
 
-The main source of problems arose due to the lack of familiarity and nuances of
-each technology used.
+A significant portion of issues stemmed from the lack of familiarity with the
+technologies used. A few examples included the need for workarounds during 3D
+scanning as well as the extent to which tolerances must be employed when
+laser-cutting platic materials such as acrylic. One solution to mitigate these
+issues would be to develop theoretical and practical knowledge regarding all
+tools before the project period to allow for focused and realistic planning.
+
+Another area where improvements can be made is the quality of manufactured
+parts. The 3D printed part shows prominent layer lines that take away from
+aesthetics. Additionally, the acrylic parts show signs of melting inside the
+part, further decreasing appeal. However, these can be avoided by dialing in
+print settings and being more mindful of materials during handling. For the
+purposes of the project, these artifacts can be overlooked as aesthetic defects
+do not prevent the primary goal of reverse-engineering the plumbus.
+
+A strong point of the project is the choice of tools to further progress. Tools
+such as Blender, the EINSTAR as well as the material chosen for the base were
+selected for how their properties aligned with the needs of the project.
+
+Overall, the end-result successfuly meets the criteria of form and dimensions.
 
 % scanning problems and getting over them
 % laser cutting problems
 
-% right tool for the job (Blender, EINSTAR, material)
-
 % 3d printing artifacts -> more tuned print settings, but good enough for the
 % job
+
+% right tool for the job (Blender, EINSTAR, material)
 
 % planning and team-coordination - distributing workload in a linear project
 
