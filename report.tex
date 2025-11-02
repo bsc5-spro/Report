@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper]{article} \usepackage{graphicx} \usepackage{amsmath,
 amssymb} \usepackage{siunitx} \usepackage{geometry} \geometry{margin=2.5cm}
 \usepackage{wrapfig} \usepackage{caption} \usepackage{subcaption}
+\usepackage{placeins}
 
 \captionsetup[figure]{width=0.8\textwidth}  % for all figures
 
@@ -8,7 +9,7 @@ amssymb} \usepackage{siunitx} \usepackage{geometry} \geometry{margin=2.5cm}
 printing and laser-cutting}
 
 \author{ BSc-5 \\[1em] Adam Gabor Bacso \\ Borys Maksymilian Bobrowski \\ Greta
-  Klara Wodala \\ Juan Ruiz \\ Nikola Dragomirov Dimitrov \\ Rui Emanuel Vasquez
+  Klara Wodala \\ Juan Ruiz \\ Nikola Dragomirov Dimitrov \\ Rui Emanuel Vasques
 Pacheco }
 
 \date{October, 2025} \maketitle \tableofcontents \newpage
@@ -125,7 +126,7 @@ The cleanup and assembly process consisted of the following steps:
   \item Remesh\footnote{Voxel remeshing is the
       process of creating new edges and vertices where the model
       surface intersects
-    an edge of the voxel grid of a specific scale} the object to
+    an edge of the voxel grid of a specific scale.} the object to
     obtain a more even
     vertex- and detail density.
   \item Scale the object to appropriate scale.
@@ -191,7 +192,31 @@ The final structural requirement of the project was to create a laser cut base
 for the plumbus to be displayed in. Additionally, a press-fit tolerance was
 required between the base and the plumbus.
 
-After several design iterations, the final design features a collar, which mates
-with the grodus, and four supporting legs. After
+The final design, featuring a collar mating with the grodus, and four supporting
+legs, was settled on following an iterative design process. The main issue that
+needed to be tackled was identifying the correct tolerances in the design that
+translated well into the reall world material. The \qty{3}{\milli\meter} acrylic
+plate used was very prone to melting, thus an agressive compensation was
+required where the material would mate with the plumbus or other acrylic
+elements.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{media/fit_part.png}
+  \caption{Design of test part in NX. The gaps start from \qty{3}{\milli\meter}
+    (at the end with the circular hole) and decrease by \qty{0.05}{\milli\meter}
+  each.}
+  \label{fig:fitcheck}
+\end{figure}
+\FloatBarrier
+
+To alleviate the need for simply guessing the correct amount, a test part (seen
+in Fig. \ref{fig:fitcheck}) was
+made with successively smaller gaps. By attempting to fit another acrylic part
+into the gaps, the best setting could be observed empirically. After testing
+each gap, the last one (\qty{2.7}{\milli\meter}) still proved to be slightly too
+large. Therefore, the gaps on all individual parts were shurnk down by
+\qty{0.35}{\milli\meter} to account for the molten material and still achieve a
+press-fit tolerance.
 
 \end{document}
